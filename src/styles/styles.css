@@ -1,0 +1,23 @@
+@font-face {
+    font-family: 'Teko';
+    src: url('/fonts/Teko.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Antonio';
+    src: url('/fonts/Antonio.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'ShareTech';
+    src: url('/fonts/ShareTech.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
