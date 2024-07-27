@@ -1,0 +1,54 @@
+---
+
+---
+
+<div>
+    <!-- <h1 class="opacity-0 font-poppins font-bold text-5xl underline">tu futuro</h1> -->
+    <h1
+        id="hero-title"
+        class="font-poppins text-4xl md:text-5xl underline decoration-sky-400 duration-1000"
+    >
+    </h1>
+    <!-- <h1 class="absolute right-0 font-poppins font-bold text-5xl underline decoration-sky-400">procesos</h1>
+    <h1 class="absolute right-0 font-poppins font-bold text-5xl underline decoration-sky-400">reportes</h1> -->
+</div>
+<script>
+    const strings: string[] = ["tus procesos", "tus operaciones", "tus reportes", "tus negocios", "tu futuro", "tu vida"];
+    const heroTitle = document.getElementById("hero-title");
+    
+    async function typeWriter(stringArray: string[]) {
+        if (!heroTitle) return;
+        let currentCharIndex = 0;
+        while (true) {
+            for (const currentString of stringArray) {
+                if (currentString === stringArray[stringArray.length - 1]) {
+                    heroTitle.classList.remove("decoration-sky-400");
+                    heroTitle.classList.add("decoration-orange-500");
+                    heroTitle.classList.add("drop-shadow-lg");
+                }
+                heroTitle.textContent = currentString.slice(0, currentCharIndex);
+                while (currentCharIndex < currentString.length) {
+                    heroTitle.textContent += currentString[currentCharIndex];
+                    currentCharIndex++;
+                    await new Promise((resolve) => setTimeout(resolve, 75));
+                }
+                if (currentString === stringArray[stringArray.length - 1]) {
+                    await new Promise((resolve) => setTimeout(resolve, 5000));
+                    heroTitle.classList.remove("decoration-orange-500");
+                    heroTitle.classList.add("decoration-sky-400");
+                    heroTitle.classList.remove("drop-shadow-lg");
+                } else {
+                    await new Promise((resolve) => setTimeout(resolve, 1000));
+                }
+                while (currentCharIndex > 0) {
+                    heroTitle.textContent = currentString.slice(0, currentCharIndex);
+                    currentCharIndex--;
+                    await new Promise((resolve) => setTimeout(resolve, 75));
+                }
+            }
+        }
+    }
+
+    typeWriter(strings);
+
+</script>

@@ -1,0 +1,63 @@
+---
+import "../../styles/styles.css";
+import TitleBarPage from "../../components/TitleBarPage.astro";
+import Button from "../../components/Button.astro";
+import HeroTitleHeader from "../../components/HeroTitleHeader.astro";
+---
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>KIDJ</title>
+    </head>
+    <body class="bg-gray-900 flex flex-col h-dvh">
+        <nav class="flex p-4 text-gray-100 flex-shrink">
+            <h1 class="font-bold text-4xl">
+                <span
+                    class="text-3xl font-code-display font-normal text-green-500"
+                    >&lt;</span
+                >KreaSoft <span
+                    class="text-3xl font-code-display font-normal text-green-500"
+                    >/&gt;</span>
+            </h1>
+            <div class="ms-auto hidden md:flex gap-6 items-center">
+                <TitleBarPage name="Inicio" href="/" />
+                <TitleBarPage name="Acerca De" href="/" />
+                <TitleBarPage name="Productos" href="/" />
+                <TitleBarPage name="Contacto" href="/" />
+                <TitleBarPage name="Blog" href="/blog" />
+            </div>
+            <Button class:list={["block md:hidden ms-auto"]} />
+        </nav>
+        <main
+            class="flex flex-col w-full relative flex-grow flex-1 text-white p-4 items-center"
+        >
+            <div class="flex flex-col w-full lg:w-3/4 items-center">
+                <div class="w-full md:flex-row mt-4 md:gap-4 animate-fade-in-up">
+                    <h1
+                        class="font-sans font-bold text-5xl underline decoration-green-500"
+                    >
+                        Blog
+                    </h1>
+                    <p
+                        class="font-code-display text-lg max-w-full md:max-w-[60rem] text-pretty mt-16"
+                    >
+                        Este blog es un espacio para compartir conocimiento y experiencias en el desarrollo de software.
+                        A través de los años de experiencia de nuestro equipo, hemos aprendido mucho y queremos compartirlo contigo.
+                    </p>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>
+<script>
+    import { createIcons, Menu } from "lucide";
+    createIcons({
+        icons: {
+            Menu,
+        },
+    });
+</script>

@@ -21,3 +21,11 @@
     font-style: normal;
     font-display: swap;
 }
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('/fonts/Poppins.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
