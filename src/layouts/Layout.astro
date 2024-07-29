@@ -1,0 +1,33 @@
+---
+import Button from "../components/Button.astro";
+import TitleBarPage from "../components/TitleBarPage.astro";
+
+
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content={Astro.generator} />
+    <title>KreaSoft</title>
+</head>
+<body class="bg-gray-900 flex flex-col h-dvh">
+    <nav class="flex p-4 text-gray-100 flex-shrink">
+        <h1 class="font-k2d font-bold text-4xl"><span class="text-3xl font-code-display font-normal text-green-500">&lt;</span>KreaSoft <span class="text-3xl font-code-display font-normal text-green-500">/&gt;</span></h1>
+        <div class="ms-auto hidden md:flex gap-6 items-center">
+            <TitleBarPage name="Inicio" href="/" />
+            <TitleBarPage name="Nosotros" href="/" />
+            <TitleBarPage name="Productos" href="/" />
+            <TitleBarPage name="Contacto" href="/" />
+            <TitleBarPage name="Blog" href="/blog" />
+        </div>
+        <Button class:list={['block md:hidden ms-auto']} />
+    </nav>
+    <main class="flex flex-col w-full relative flex-grow flex-1 text-white p-4 items-center">
+        <slot />
+    </main>
+</body>
+</html>

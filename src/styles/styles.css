@@ -29,3 +29,77 @@
     font-style: normal;
     font-display: swap;
 }
+
+@font-face {
+    font-family: 'UbuntuMono';
+    src: url('/fonts/UbuntuMono.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'K2D';
+    src: url('/fonts/K2D-Medium.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'K2D';
+    src: url('/fonts/K2D-Bold.ttf');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'EncodeSans';
+    src: url('/fonts/EncodeSans.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'JoseFinSans';
+    src: url('/fonts/JoseFinSans.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'JoseFinSans';
+    src: url('/fonts/JoseFinSans.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'RedHat';
+    src: url('/fonts/RedHat.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Urbanist';
+    src: url('/fonts/Urbanist.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Urbanist';
+    src: url('/fonts/Urbanist.ttf');
+    font-weight: 700;
+}
+
+.test {
+    text-rendering: optimizeLegibility;
+}

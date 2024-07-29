@@ -1,51 +1,32 @@
 ---
 import '../styles/styles.css';
-import TitleBarPage from '../components/TitleBarPage.astro';
-import Button from '../components/Button.astro';
 import HeroTitleHeader from '../components/HeroTitleHeader.astro';
+import Layout from '../layouts/Layout.astro';
 ---
 
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <meta name="viewport" content="width=device-width" />
-        <meta name="generator" content={Astro.generator} />
-        <title>KIDJ</title>
-    </head>
-    <body class="bg-gray-900 flex flex-col h-dvh">
-        <nav class="flex p-4 text-gray-100 flex-shrink">
-            <h1 class="font-bold text-4xl"><span class="text-3xl font-code-display font-normal text-green-500">&lt;</span>KreaSoft <span class="text-3xl font-code-display font-normal text-green-500">/&gt;</span></h1>
-            <div class="ms-auto hidden md:flex gap-6 items-center">
-                <TitleBarPage name="Inicio" href="/" />
-                <TitleBarPage name="Acerca De" href="/" />
-                <TitleBarPage name="Productos" href="/" />
-                <TitleBarPage name="Contacto" href="/" />
-                <TitleBarPage name="Blog" href="/blog" />
-            </div>
-            <Button class:list={['block md:hidden ms-auto']} />
-        </nav>
-        <main class="flex flex-col w-full relative flex-grow flex-1 text-white p-4 items-center">
-            <div class="grid grid-cols-2 grid-rows-2 w-full lg:w-3/4 gap-4 animate-fade-in-up">
-                <div class="col-span-2 md:col-start-1 md:col-end-2 md:text-end md:mr-12 md:mb-8">
-                    <h1 class="self-start font-bold text-6xl mt-4 md:mt-16">Creamos Software</h1>
-                    <div class="flex flex-col md:flex-row md:gap-4">
-                        <div class="flex-1">
-                            <h1 class="font-poppins text-4xl md:text-5xl underline decoration-green-500">Para facilitar</h1>
-                            <HeroTitleHeader></HeroTitleHeader>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-span-2 md:col-start-2 md:col-end-3 md:row-start-2 md:row-end-3 md:ml-12 md:mt-8">
-                    <p class="font-code-display text-xl md:max-w-fit text-pretty">
-                        En <span class="text-green-500">&lt;</span>KreaSoft <span class="text-green-500">/&gt;</span> reconocemos tu impulso por el éxito y la innovación.<br>
-                        Ya lograste construir algo increible y estamos aquí para ayudarte a llevarlo aún más lejos.
-                    </p>
+<Layout>
+    <div class="grid grid-cols-2 grid-rows-2 w-full lg:w-3/4 gap-4 animate-fade-in-up">
+        <div class="col-span-2 md:col-start-1 md:col-end-2 md:text-end md:mr-12 md:mb-8">
+            <h1 class="self-start font-urbanist font-bold text-6xl mt-4 md:mt-16">Creamos Software</h1>
+            <div class="flex flex-col md:flex-row md:gap-4">
+                <div class="flex-1">
+                    <h1 class="font-urbanist text-4xl md:text-5xl underline decoration-green-500 ">Para facilitar</h1>
+                    <HeroTitleHeader></HeroTitleHeader>
                 </div>
             </div>
-        </main>
-    </body>
-</html>
+        </div>
+        <div class="col-span-2 md:col-start-2 md:col-end-3 md:row-start-2 md:row-end-3 md:ml-8">
+            <p class="text-lg md:max-w-fit text-pretty">
+                En <span class="font-k2d font-bold"><span class="text-green-500">&lt;</span>KreaSoft <span class="text-green-500">/&gt;</span></span> reconocemos tu impulso por el éxito y la innovación.
+                Ya lograste construir algo increible y estamos aquí para ayudarte a llevarlo aún más lejos.
+            </p>
+            <br>
+            <p class="text-lg text-pretty">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora reprehenderit voluptatem tenetur ipsum doloremque adipisci nulla cum quas. Voluptate, cumque.
+            </p>
+        </div>
+    </div>
+</Layout>
 <script>
     import { createIcons, Menu } from 'lucide';
     createIcons({
