@@ -4,27 +4,21 @@ import Layout from "../../layouts/Layout.astro";
 ---
 
 <Layout>
-    <div class="flex flex-col w-full lg:w-2/3 items-center">
-        <div class="w-full md:flex-row mt-4 md:gap-4 animate-fade-in-up">
-            <h1
-                class="font-urbanist font-bold text-5xl underline decoration-green-500"
-            >
-                Blog
-            </h1>
-            <p
-                class="text-lg max-w-full text-pretty mt-16"
-            >
-                Este blog es un espacio para compartir conocimiento y experiencias en el desarrollo de software.
-                A través de los años de experiencia de nuestro equipo, hemos aprendido mucho y queremos compartirlo contigo.
-            </p>
+    <div class="flex flex-col items-center">
+        <div class="flex flex-col w-full lg:w-2/3 items-center p-4">
+            <div class="w-full md:flex-row mt-4 md:gap-4 animate-fade-in-up">
+                <h1
+                    class="font-urbanist font-bold text-5xl underline decoration-green-500"
+                >
+                    Blog
+                </h1>
+                <p
+                    class="text-lg max-w-full text-pretty mt-8"
+                >
+                    Este blog es un espacio para compartir conocimiento y experiencias en el desarrollo de software.
+                    A través de los años de experiencia de nuestro equipo, hemos aprendido mucho y queremos compartirlo contigo.
+                </p>
+            </div>
         </div>
     </div>
 </Layout>
-<script>
-    import { createIcons, Menu } from "lucide";
-    createIcons({
-        icons: {
-            Menu,
-        },
-    });
-</script>

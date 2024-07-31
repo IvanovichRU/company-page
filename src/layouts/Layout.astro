@@ -1,33 +1,124 @@
 ---
-import Button from "../components/Button.astro";
 import TitleBarPage from "../components/TitleBarPage.astro";
-
-
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content={Astro.generator} />
-    <title>KreaSoft</title>
-</head>
-<body class="bg-gray-900 flex flex-col h-dvh">
-    <nav class="flex p-4 text-gray-100 flex-shrink">
-        <h1 class="font-k2d font-bold text-4xl"><span class="text-3xl font-code-display font-normal text-green-500">&lt;</span>KreaSoft <span class="text-3xl font-code-display font-normal text-green-500">/&gt;</span></h1>
-        <div class="ms-auto hidden md:flex gap-6 items-center">
-            <TitleBarPage name="Inicio" href="/" />
-            <TitleBarPage name="Nosotros" href="/" />
-            <TitleBarPage name="Productos" href="/" />
-            <TitleBarPage name="Contacto" href="/" />
-            <TitleBarPage name="Blog" href="/blog" />
-        </div>
-        <Button class:list={['block md:hidden ms-auto']} />
-    </nav>
-    <main class="flex flex-col w-full relative flex-grow flex-1 text-white p-4 items-center">
-        <slot />
-    </main>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content={Astro.generator} />
+        <title>KreaSoft</title>
+    </head>
+    <body class="relative bg-gray-900 flex flex-col h-dvh overflow-hidden">
+        <nav class="flex p-4 text-gray-100 flex-shrink shadow-lg">
+            <h1 class="font-k2d font-bold text-4xl">
+                <span
+                    class="text-3xl font-code-display font-normal text-green-500"
+                    >&lt;</span
+                >KreaSoft <span
+                    class="text-3xl font-code-display font-normal text-green-500"
+                    >/&gt;</span>
+            </h1>
+            <div class="ms-auto hidden md:flex gap-6 items-center">
+                <TitleBarPage name="Inicio" href="/" />
+                <TitleBarPage name="Nosotros" href="/" />
+                <TitleBarPage name="Productos" href="/" />
+                <TitleBarPage name="Contacto" href="/" />
+                <TitleBarPage name="Blog" href="/blog" />
+            </div>
+            <div class="flex md:hidden items-center ms-auto">
+                <button id="mobile-nav-button" class="p-2" type="button">
+                    <i data-lucide="menu"></i>
+                </button>
+                <div id="mobile-nav-overlay" class="hidden overflow-hidden">
+                    <div
+                        id="mobile-nav-backdrop"
+                        class="absolute left-0 right-0 top-0 bottom-0 opacity-0 z-10"
+                    >
+                    </div>
+                    <div
+                        id="mobile-nav"
+                        class="absolute flex flex-col items-end right-0 top-0 bottom-0 bg-slate-950 p-2 z-20 text-3xl gap-4 animate-fade-in-right"
+                    >
+                        <a
+                            class="px-4 font-k2d font-bold underline underline-offset-4 decoration-sky-400 ps-20 mt-4"
+                            href="/"
+                            id="nav-inicio">Inicio</a
+                        >
+                        <a
+                            class="px-4 font-k2d font-bold underline underline-offset-4 decoration-sky-400 ps-20"
+                            href="/"
+                            id="nav-nosotros">Nosotros</a
+                        >
+                        <a
+                            class="px-4 font-k2d font-bold underline underline-offset-4 decoration-sky-400 ps-20"
+                            href="/"
+                            id="nav-productos">Productos</a
+                        >
+                        <a
+                            class="px-4 font-k2d font-bold underline underline-offset-4 decoration-sky-400 ps-20"
+                            href="/"
+                            id="nav-contacto">Contacto</a
+                        >
+                        <a
+                            class="px-4 font-k2d font-bold underline underline-offset-4 decoration-sky-400 ps-20"
+                            href="/blog"
+                            id="nav-blog">Blog</a
+                        >
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <main class="text-white overflow-auto">
+            <slot />
+        </main>
+    </body>
 </html>
+<script>
+    import { CalendarCheck2, createIcons, Menu, Settings, UsersRound } from "lucide";
+    createIcons({
+        icons: {
+            Menu,
+            Settings,
+            CalendarCheck2,
+            UsersRound,
+        },
+    });
+
+    const mobileNavButton =
+        document.querySelector<HTMLButtonElement>("#mobile-nav-button");
+    const mobileNavOverlay = document.querySelector<HTMLDivElement>(
+        "#mobile-nav-overlay",
+    );
+    const mobileNavBackdrop = document.querySelector<HTMLDivElement>(
+        "#mobile-nav-backdrop",
+    );
+
+    if (mobileNavButton && mobileNavOverlay && mobileNavBackdrop) {
+        mobileNavButton.addEventListener("click", () => {
+            if (mobileNavOverlay.classList.contains("hidden")) {
+                mobileNavOverlay.classList.remove("hidden");
+            } else {
+                mobileNavOverlay.classList.add("hidden");
+            }
+        });
+        mobileNavBackdrop.addEventListener("click", () => {
+            mobileNavOverlay.classList.add("hidden");
+        });
+    }
+
+    document.querySelectorAll("#mobile-nav a").forEach((el) => {
+        el.classList.remove("decoration-green-600");
+        el.classList.remove("decoration-sky-400");
+
+        if (window.location.pathname === ("/") && el.id === "nav-inicio") {
+            el.classList.add("decoration-green-600");
+        } else if (window.location.pathname.startsWith("/blog") && el.id === "nav-blog") {
+            el.classList.add("decoration-green-600");
+        } else {
+            el.classList.add("decoration-sky-400");
+        }
+    });
+</script>

@@ -99,7 +99,3 @@
     src: url('/fonts/Urbanist.ttf');
     font-weight: 700;
 }
-
-.test {
-    text-rendering: optimizeLegibility;
-}
