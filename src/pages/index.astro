@@ -6,8 +6,8 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout>
     <div class="flex flex-col items-center">
-        <div class="grid grid-cols-2 grid-rows-2 w-full lg:w-3/4 gap-4 animate-fade-in-up p-4">
-            <div class="col-span-2 md:col-start-1 md:col-end-2 md:text-end">
+        <div class="flex flex-col md:grid grid-cols-2 grid-rows-2 w-full lg:w-3/4 gap-4 p-4 animate-fade-in-up">
+            <div class="h-fit col-span-2 md:col-start-1 md:col-end-2">
                 <h1 class="self-start font-urbanist font-bold text-6xl md:mt-16">Creamos Software</h1>
                 <div class="flex flex-col md:flex-row md:gap-4">
                     <div class="flex-1">
@@ -16,13 +16,21 @@ import Layout from '../layouts/Layout.astro';
                     </div>
                 </div>
             </div>
-            <div class="col-span-2 md:col-start-2 md:col-end-3 md:row-start-2 md:row-end-3 md:ml-8">
+            <div class="hidden md:flex flex-col items-center justify-center col-span-1 col-start-2 col-end-3 row-span-1 row-start-1 row-end-3 rounded-md overflow-hidden">
+                <img src="top-4.svg" class="w-[400px]">
+                <a class="self-end text-xs text-right font-urbanist hover:text-green-600 underline duration-300" href="https://www.freepik.com/free-vector/developer-activity-concept-illustration_9319773.htm#fromView=search&page=1&position=37&uuid=e623d958-4c49-4d34-bebd-4252d20fde89">Image by storyset on Freepik</a>
+            </div>
+            <div class="col-span-2 md:col-start-1 md:col-end-2 md:row-start-2 md:row-end-3 md:ml-8 md:mt-16">
                 <p class="text-xl md:max-w-fit text-pretty">
                     En <span class="font-k2d font-bold"><span class="text-green-500">&lt;</span>KreaSoft <span class="text-green-500">/&gt;</span></span> reconocemos tu impulso por el éxito y la innovación.
                     Ya lograste construir algo increible y estamos aquí para ayudarte a llevarlo aún más lejos.
                 </p>
+                <div class="flex md:hidden flex-col items-center justify-center col-span-1 col-start-2 col-end-3 row-span-1 row-start-1 row-end-3 rounded-md overflow-hidden">
+                    <img src="top-4.svg" class="w-[400px]">
+                    <a class="self-end text-xs text-right font-urbanist hover:text-green-600 underline duration-300" href="https://www.freepik.com/free-vector/developer-activity-concept-illustration_9319773.htm#fromView=search&page=1&position=37&uuid=e623d958-4c49-4d34-bebd-4252d20fde89">Image by storyset on Freepik</a>
+                </div>
                 <div class="flex justify-center mt-10">
-                    <button class="text-xl font-k2d font-bold px-3 py-2 rounded bg-green-600 hover:bg-green-700 duration-300">CREAR MI SOLUCIÓN</button>
+                    <button class="text-xl font-k2d font-bold px-3 py-2 rounded bg-green-600 hover:bg-green-700 duration-300 shadow-lg shadow-green-900">CREEMOS MI SOLUCIÓN</button>
                 </div>
                 <!-- <p class="text-lg text-pretty">
                     Con nuestra experiencia conjunta en desarrollo de software de más de 3 años, brindamos soluciones a los problemas
@@ -30,20 +38,22 @@ import Layout from '../layouts/Layout.astro';
                 </p> -->
             </div>
         </div>
-        <div class="bg-slate-800 mt-8 w-full p-4">
-            <p class="font-k2d font-bold text-2xl text-center">Consigue</p>
-            <div class="flex flex-col gap-8 md:flex-row justify-around items-center mt-8">
-                <div class="flex gap-2 text-lg items-center">
-                    <i class="text-green-600" data-lucide="settings"></i>
-                    <p class="font-k2d font-bold">Mayor Productividad y Eficacia</p>
-                </div>
-                <div class="flex gap-2 text-lg items-center">
-                    <i class="text-green-600" data-lucide="calendar-check-2"></i>
-                    <p class="font-k2d font-bold">Soluciones a prueba del futuro</p>
-                </div>
-                <div class="flex gap-2 text-lg items-center mb-8">
-                    <i class="text-green-600" data-lucide="users-round"></i>
-                    <p class="font-k2d font-bold">Óptima atención a clientes</p>
+        <div class="w-full overflow-hidden">
+            <div class="bg-slate-800 mt-8 w-full p-4 animate-fade-in-up">
+                <p class="font-k2d font-bold text-2xl text-center">Consigue</p>
+                <div class="flex flex-col gap-8 md:flex-row justify-around items-center mt-8">
+                    <div class="flex gap-2 text-lg items-center">
+                        <i class="text-green-600" data-lucide="settings"></i>
+                        <p class="font-k2d font-bold">Mayor productividad y eficacia</p>
+                    </div>
+                    <div class="flex gap-2 text-lg items-center">
+                        <i class="text-green-600" data-lucide="calendar-check-2"></i>
+                        <p class="font-k2d font-bold">Soluciones a prueba del futuro</p>
+                    </div>
+                    <div class="flex gap-2 text-lg items-center mb-8">
+                        <i class="text-green-600" data-lucide="users-round"></i>
+                        <p class="font-k2d font-bold">Óptima atención a clientes</p>
+                    </div>
                 </div>
             </div>
         </div>

@@ -42,6 +42,7 @@ export default {
 			},
 			animation: {
 				'fade-in-up': 'fade-in-up 0.5s ease-out',
+				'fade-in-up-1500': 'fade-in-up 0.5s 0.25s ease-out',
 				'fade-in-right': 'fade-in-right 0.3s ease-out',
 				'spin-slow': 'spin 3s linear infinite',
 			},
